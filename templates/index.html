@@ -14,17 +14,19 @@
 <nav class="navbar container">
   <div class="menu-row col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
     <div class="row row-centered">
-   <button id="1" type="button" class="menu-item btn btn-primary col-sm-3 col-md-3 col-xs-12 col-centered">Menu1</button>
-   <button id="2" type="button" class="menu-item btn btn-secondary col-sm-3 col-md-3 col-xs-12 col-centered">Menu2</button>
-   <button id="3" type="button" class="menu-item btn btn-secondary col-sm-3 col-md-3 col-xs-12 col-centered">Menu3</button>
+   <button id="1" type="button" class="menu-item btn btn-primary col-sm-3 col-md-3 col-xs-12 col-centered" onclick="switchMenu(this.id)">Menu1</button>
+   <button id="2" type="button" class="menu-item btn btn-secondary col-sm-3 col-md-3 col-xs-12 col-centered" onclick="switchMenu(this.id)">Menu2</button>
+   <button id="3" type="button" class="menu-item btn btn-secondary col-sm-3 col-md-3 col-xs-12 col-centered" onclick="switchMenu(this.id)" >Menu3</button>
     </div>
   </div>
 
 </nav>
 <div id="1" class="content container col-md-8 col-md-offset-2">
-  Content1
+  {# a {{ jelek közötti rész a jinja2 template engine-hez tartozik.  #}
+  {#   további információk: http://jinja.pocoo.org/docs/2.9/ #}
+  <h1>Hello {{ user }} </h1>
 </div>
-<div id="2" class="content container col-md-8 col-md-offset-2">
+<div id="2" class="inactive-content content container col-md-8 col-md-offset-2">
 
   <h1> Dev környezet web apphoz </h1>
   javascript package manager (nodejs) : npm  <br>
@@ -48,10 +50,24 @@
   Python csomagok telepítése:  <br>
   <code>pip install flask</code> <br>
 </div>
-<script>
-console.log("Majd holnap...")
+<div id="3" class="inactive-content content container col-md-8 col-md-offset-2">
+Logout...
+</div>
 
+<script>
+  function switchMenu(clickedId) {
+    console.log(clickedId+" megnyomva...");
+    // jquery selector: minden html elemet kiválaszt amin rajta van content class
+    $(".content").css('display', 'none');
+    $("#"+clickedId+".content").css('display', 'unset');
+
+    $(".menu-item").removeClass("btn-primary");
+
+    $("#"+clickedId+".menu-item").removeClass("btn-secondary");
+    $("#"+clickedId+".menu-item").addClass("btn-primary");
+  };
 </script>
+
 
 
 </body>
