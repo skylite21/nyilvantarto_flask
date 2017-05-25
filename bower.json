@@ -1,4 +1,7 @@
 {
+  "//": "ezt a file-t a bower inittel generáltuk", 
+  "//": "tartalmazza a frontend függőségeket", 
+  "//": "telepiteni a bower install paranccsal lehet", 
   "name": "nyilvantarto",
   "description": "nyilvantarosdlfgkjsdg",
   "main": "",

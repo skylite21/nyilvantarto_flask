@@ -1,3 +1,5 @@
+# ez a file a python csomagokat tartalmazza
+# telepíteni a virtualenv-en belül kell. 
 appdirs==1.4.3
 click==6.7
 Flask==0.12.2
