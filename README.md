@@ -10,6 +10,15 @@ Virtualenv környezet:
 ````
 sudo pip install virtualenv
 ````
+nodejs, bower telepítése:
+
+````
+apt-get remove --purge nodejs
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -; apt update; apt install nodejs
+npm install --global bower
+````
+
+
 # Használat
 Clone-ozzuk ezt a repot:
 ````
