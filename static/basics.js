@@ -1,7 +1,7 @@
 // ez a file a javascript alapokat tartalmazza, nem az app része
 
 
-'use strict' // szigorú mód, szigorúbbak a szabályok, érdemes használni
+'use strict'; // szigorú mód, szigorúbbak a szabályok, érdemes használni
 
 console.log("Hello bazmeg");
 
@@ -75,7 +75,7 @@ console.log("csere utan> a = "+a+" b = "+b);
 
 // változó típusok:  number, string, boolean
 
-let igazhamis = true
+let igazhamis = true;
 
 if ( a > 5 && a < 20 ) {
   console.log ("a 5 es 20 kozott van");
@@ -93,8 +93,8 @@ if ( nev === "Geza" ) {
 
 // a tombben tobb elemet tudunk tarolni egyszerre, 
 // tipustol fuggetlenul
-let tomb = [32, 54, 65, 33, 66, 12]
-let tomb2 = [12, "szoveg", true, 65, 33, 66]
+let tomb = [32, 54, 65, 33, 66, 12];
+let tomb2 = [12, "szoveg", true, 65, 33, 66];
 
 console.log("a tomb : "+tomb);
 console.log("a tomb tipusa: "+typeof(tomb));
@@ -116,7 +116,7 @@ if (vanbenne) {
 // mail -s "level targya" email@email.hu < basics.js
 
 console.log("a gyumolcs: "+gyumolcs); // undefined, mert mar letezik a valtozo csak nem kapott értéket
-var gyumolcs = "alma" // ha var-al deklaralunk arra érvényes a hoisting még strict modban is!
+var gyumolcs = "alma"; // ha var-al deklaralunk arra érvényes a hoisting még strict modban is!
 // hoisting: bizonyos változók vagy fügvények előbb jönnek létre mint ahogy lefut a kód
 // semicolon insertion (automatikus pontosvessző beillesztés)
 
@@ -133,7 +133,7 @@ console.log(++szam);
 
 
 // ciklusok
-let j = 0
+let j = 0;
 while ( j < tomb.length ) {
   console.log("szia");
   j++;
@@ -171,7 +171,7 @@ console.log("a otosok szama: "+otosok);
 
 var koszones = function(szoveg) { //function expression
   console.log("hello "+szoveg+"!");
-}
+};
 
 let keresztnev = "Pista";
 koszones(keresztnev); // ez nem hasznalhato csak miutan deklaraltuk a fugvenyt (not hoisted)
@@ -204,7 +204,7 @@ function convertToNumber(szam1, szam2) { // szam1, szam2 > a convertToNumber fgv
 }
 
 let eredmenyek = convertToNumber(2, "34");
-console.log(eredmenyek)
+console.log(eredmenyek);
 
 // function statementet hasznalunk:
 function pontosIdo() { // deklarálunk egy pontosIdo nevu fugvenyt, nincs bemeneti értéke
@@ -229,9 +229,9 @@ let pontosIdo2 = function() {
   let pontosDatum2 = function() {
     let datum = "hetfo";
     console.log("a pontos ido:"+honap+", "+datum+", "+ido+" óra");
-  }
+  };
   pontosDatum2();
-}
+};
 
 
 // CLOSURE: a function can also access variables defined outside the function
@@ -258,14 +258,14 @@ console.log("Szám hozzáadás: "+szamHozzaadas(5) );
 
 // adattípusok: number, string, array, bool, NaN, 
 
-let myObject = {}
+let myObject = {};
 console.log(typeof (myObject)); // a typeof fgv, az array tipusú elemek esetén is, object-et ad vissza
 
 let player = {
   "name": "John",  // kulcs, érték párok (key: name, value: John)
   "health": 100,
   "alive": true
-}
+};
 console.log("az uj jatekos neve: "+player.name);
 let shot = Math.floor((Math.random() * 200 ) + 1); // egy veletlenszeru szam 1 es 200 kozott
 if (player.alive) {
@@ -293,17 +293,17 @@ let animals = [
   {neve: "Lori", fajtaja:"madar"},
   {neve: "Barni", fajtaja:"macska"},
   {neve: "Cirmi", fajtaja:"macska"}
-]
+];
 console.log("==========all animals========\n");
 console.log(animals);
 
-let kutyak = []
+let kutyak = [];
 // az animals tombon vegig megyunk, es a tömb aktualis eleme az animal valtozo lesz. NINCS INDEX.
 // requires EcmaScript 2015+
 for( let animal of animals) { // egy animal valtozo fogja tartalmazni az animals tomb aktualis elemet
 // lehetne let animal in animals, de az OBJECTRE van, nem tömbre!!!
   if( animal.fajtaja === "kutya") {
-    kutyak.push(animal) // a tomb végére hozzáfüzök egy elemet
+    kutyak.push(animal); // a tomb végére hozzáfüzök egy elemet
   }
 }
 console.log("==========all dogs========\n");
@@ -314,9 +314,9 @@ player.level = 1; // kibővítettük a player object-et egy új property-t
 console.log(player.name+" jatekos szintje: "+player.level);
 player.levelup = function() {
   player.level = player.level + 1;
-}
+};
 
-player.levelup()
+player.levelup();
 console.log(player.name+" jatekos szintje: "+player.level);
 
 
@@ -327,18 +327,18 @@ for (let key in player) { // this is how you loop trough an object by key
 
 // functional programming
 // #Learnabout: https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84
-kutyak = []
+let kutyak = []; 
 kutyak = animals.filter( function(animal) {
-  return animal.fajtaja === "kutya" // csak akkor adom vissza a tomb elemet, ha a fajtaja kutya
-})
+  return animal.fajtaja === "kutya"; // csak akkor adom vissza a tomb elemet, ha a fajtaja kutya
+});
 
 console.log("==========all dogs========\n");
 console.log(kutyak);
 
 let kutyaE = function(animal) {
   return animal.fajtaja === "kutya";
-}
-kutyak = animals.filter(kutyaE)
+};
+kutyak = animals.filter(kutyaE);
 
 // javasript object ES5 -- EcmaScipt 2014
 
@@ -347,10 +347,10 @@ let Cat = function(name) {
   this.color = "black";
   this.walk = function () {
     return console.log(this.name+" is walking...");
-  }
+  };
   this.meow = function () {
     return console.log(this.name+" says: MEOWWW!!!!");
-  }
+  };
   Object.defineProperty(this, 'legscount', {  // this.legscount = 4
     value: 4,
     writable: false,
@@ -363,7 +363,7 @@ let Cat = function(name) {
 // ez hatékonyabb!!
 Cat.prototype.purr = function() { 
   return console.log(this.name+" says: BRRRRRRRRRR!!");
-}
+};
 
 
 let cat1 = new Cat("Cirmi");
@@ -389,7 +389,7 @@ console.log(Object.keys(cat1)); // purr itt azert nincs mert az a Cat.prototype-
 
 // #learnabout> https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance#Prototypal_inheritance
 // !!!!!!!!!!! javascript dokumentacio:   https://developer.mozilla.org/en-US/docs/Learn/JavaScript !!!!!!!!!!!!!!
-let mutantCat = function(name) {
+let MutantCat = function(name) {
   Cat.call(this, name);
   Object.defineProperty(this, 'legscount', {
     value: 4,
@@ -400,13 +400,13 @@ let mutantCat = function(name) {
 };
 
 // prototype is an encaptulation of properties that an object links to.
-mutantCat.prototype = Object.create(Cat.prototype);
-mutantCat.prototype.constructor = mutantCat;
+MutantCat.prototype = Object.create(Cat.prototype);
+MutantCat.prototype.constructor = MutantCat;
 
 
-let mutantCat1 = new mutantCat("Simicska Lajos");
-mutantCat1.legscount = 6;
-console.log(mutantCat1.name+" lábainak száma: "+mutantCat1.legscount)
+let MutantCat1 = new MutantCat("Simicska Lajos");
+MutantCat1.legscount = 6;
+console.log(MutantCat1.name+" lábainak száma: "+MutantCat1.legscount);
 
 
 // ------------ Object Creation ES6, EcmaScript2015 ---------//
@@ -420,23 +420,23 @@ class Dog {
       enumerable: true,
       configurable: true
     });
-  }; // constructor vége
+  } // constructor vége
   bark () { // es6-ban ez automatikusan prototype!!!!!!
     console.log(this.name+" ugat: VAU VAU!!!");
-  };
-};
+  }
+}
 
 let dog1 = new Dog("Max");
 dog1.bark();
 // dog1.legscount = 6;
-console.log(dog1.name+" lábainak száma: "+dog1.legscount)
+console.log(dog1.name+" lábainak száma: "+dog1.legscount);
 
 class MutantDog extends Dog {
   constructor(name) {
     // In a child class constructor, "this" cannot be used until super is called.
     // ES6 class constructors MUST call super if they are subclasses, or they must
     // explicitly return some object to take the place of the one that was not initialized.
-  super(name)
+  super(name);
     Object.defineProperty(this, 'legscount', {
       value: 4,
       writable: true,
@@ -447,12 +447,12 @@ class MutantDog extends Dog {
   speak() {
   console.log(this.name+" Beszélni is tud");
   }
-};
+}
 
 let mutantDog1 = new MutantDog("Mutáns Kutya");
 mutantDog1.bark();
 mutantDog1.legscount = 67;
-console.log(mutantDog1.name+" lábainak száma: "+mutantDog1.legscount)
+console.log(mutantDog1.name+" lábainak száma: "+mutantDog1.legscount);
 mutantDog1.speak();
 
 
