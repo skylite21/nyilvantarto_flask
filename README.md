@@ -14,6 +14,7 @@ nodejs, bower telepítése:
 
 ````
 sudo apt-get remove --purge nodejs
+sudo apt update; apt install curl
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt update; 
 sudo apt install nodejs
