@@ -15,17 +15,18 @@
 
 <div class="container">
 
-	<form class="form-signin" method="POST">
-		<h1 class="form-signin-heading text-muted">Sign In</h1>
-    {% if error %}
-      <p class="error"><strong>Error:</strong> {{ error }}
-    {% endif %}
-    <input type="text" class="form-control" placeholder="Email address" name="email" required="" autofocus="">
-    <input type="password" class="form-control" placeholder="Password" name="password" required="">
-		<button class="btn btn-lg btn-primary btn-block" type="submit" >
-			Sign In
-		</button>
-	</form>
+<form class="form-signin" method="POST">
+  <h1 class="form-signin-heading text-muted">Sign In</h1>
+  <!-- hiba esetén az error változó értéket kap, (alapbol None), és ki írjuk az értékét -->
+  {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }} </p>
+  {% endif %}
+  <input type="text" class="form-control" placeholder="Email address" name="email" required="" autofocus="">
+  <input type="password" class="form-control" placeholder="Password" name="password" required="">
+  <button class="btn btn-lg btn-primary btn-block" type="submit" >
+    Sign In
+  </button>
+</form>
 
 </div>
 </body>
