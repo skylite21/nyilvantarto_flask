@@ -14,7 +14,6 @@ app.debug = True
 #
 validuser = "skylite"
 
-
 @app.route("/", methods=['GET', 'POST'])
 def index():
     # egy error változót deklarálunk aminek a kezdő értéken None (azaz semmi)

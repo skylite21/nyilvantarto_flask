@@ -25,6 +25,27 @@
   {# a {{ jelek közötti rész a jinja2 template engine-hez tartozik.  #}
   {#   további információk: http://jinja.pocoo.org/docs/2.9/ #}
   <h1>Hello {{ user }} </h1>
+    <div class=add_button>
+      <button class="add btn-success" onclick="addMunkanap()">+</button>
+    </div>
+
+    <div class="munkanapok">
+      Ird be a munkanapot: 
+      <form id="munkanapItems">
+        <div class="new_munkanap row">
+            <button class="remove btn-danger" onclick="removeMunkanap(this.id)">-</button>
+          <div class="col-xs-6 col-sm-2">
+            <input type="text" placeholder="dátum" class="datum_mezo" >
+          </div>
+          <div class="col-xs-6 col-sm-2">
+            <input type="number" min="0.5" max="12" step="0.5" class="munkaora" placeholder="munkaóra">
+          </div>
+           <div class="col-xs-12 col-sm-6">
+            <textarea rows="3" placeholder="megjegyzés"></textarea>
+           </div>
+        </div>
+      </form>
+    </div>
 </div>
 <div id="2" class="inactive-content content container col-md-8 col-md-offset-2">
 
@@ -53,9 +74,6 @@
 <div id="3" class="inactive-content content container col-md-8 col-md-offset-2">
 Logout...
 </div>
-
-
-
 
 </body>
 </html>
