@@ -26,14 +26,14 @@
   {#   további információk: http://jinja.pocoo.org/docs/2.9/ #}
   <h1>Hello {{ user }} </h1>
     <div class=add_button>
-      <button class="add btn-success" onclick="addMunkanap()">+</button>
+      <button class="add btn btn-success" onclick="addMunkanap()">+</button>
     </div>
 
     <div class="munkanapok">
       <h3>Ird be a munkanapot: </h3>
-      <form id="munkanapItems row">
+      <form id="munkanapItems" class="row">
         <div class="new_munkanap ">
-          <button class="remove btn-danger" onclick="removeMunkanap(this.id)">-</button>
+          <button class="remove btn btn-danger" onclick="removeMunkanap(this.id)">-</button>
           <div class="col-xs-6 col-sm-2">
             <input type="text" placeholder="dátum" class="datum_mezo form-control" >
           </div>
