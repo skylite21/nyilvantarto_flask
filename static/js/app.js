@@ -19,9 +19,22 @@ function switchMenu(clickedId) {
   $("#"+clickedId+".menu-item").addClass("btn-primary");
 }
 function addMunkanap() {
+
+
+
   $('#munkanapItems').append(`
-  <div>HELLO</div> 
-  
+        <div class="new_munkanap row">
+          <button class="remove btn btn-danger" onclick="removeMunkanap(this.id)">-</button>
+          <div class="col-xs-6 col-sm-2">
+            <input type="text" placeholder="dátum" class="datum_mezo form-control" >
+          </div>
+          <div class="col-xs-6 col-sm-2">
+            <input type="number" min="0.5" max="12" step="0.5" class="munkaora form-control" placeholder="munkaóra">
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <textarea rows="3" class="form-control" placeholder="megjegyzés"></textarea>
+          </div>
+        </div>
   `);
 
 }
