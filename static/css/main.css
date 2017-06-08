@@ -39,4 +39,15 @@ background-color: #e8f1ff;
 .datum_mezo {
     width:100%;
 }
+.savegomb {
+    float: right;
+    margin:10px;
+    padding:10px;
+    border-radius:5px;
+}
+.new_munkanap {
+    margin-bottom: 10px;
+    margin-left: 5px;
+
+}
 

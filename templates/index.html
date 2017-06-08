@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Flask App</title>
+<!-- bootstrap, jquery -->
 <script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+
+<!-- bootstrap datepicker -->
+<script type="text/javascript" src="{{ url_for('static', filename='bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.hu.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+
+<!-- sajat script es css fileok -->
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
 </head>
 
 <body>
@@ -34,6 +44,9 @@
       <form id="munkanapItems" >
         <!-- ide mar a JS fogja generalni a html-t -->
       </form>
+      <div class="row">
+       <button class="btn btn-info savegomb" id="1" onclick="sendForm()">Mentés</button>
+      </div>
     </div>
 </div>
 <div id="2" class="inactive-content content container col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
