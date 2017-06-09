@@ -1,5 +1,3 @@
-
-
 /*jshint esnext: true */
 /*jshint devel: true */
 /*jslint node: true */
@@ -45,10 +43,10 @@ function addMunkanap() {
             <input id="`+(lastid+1)+`" type="text" placeholder="dátum" class="datepicker datum_mezo form-control" value="`+mainap+`" >
           </div>
           <div class="col-xs-6 col-sm-2">
-            <input id="`+(lastid+1)+`" type="number" min="0.5" max="12" step="0.5" class="munkaora form-control" placeholder="munkaóra">
+            <input id="`+(lastid+1)+`" type="number" min="0.5" max="8" step="0.5" class="munkaora form-control" placeholder="munkaóra">
           </div>
           <div class="col-xs-12 col-sm-6">
-            <textarea id="`+(lastid+1)+`" rows="3" class="form-control" placeholder="megjegyzés"></textarea>
+            <textarea id="`+(lastid+1)+`" rows="3" class="form-control comment" placeholder="megjegyzés"></textarea>
           </div>
         </div>
   `);
@@ -64,12 +62,29 @@ function addMunkanap() {
 
 } // addMunkanap
 
+
+// globális váltó, használata csak indokolt esetben ajánlott!
 let new_munkanaps = [];
 // [{id:1, datePiced:"2017.04.03",workedHour:5,comment:"mycomment",okToSend:true},{},{}...]
 
 function collectMunkanaps() {
   //TODO összegyűjteni a munkanapokat egy objecteket tartalmazó tömbbe
-  console.log("munkanapok összegyűjtése....");
+  $('.new_munkanap').each(function() {
+    let munkanapId = $(this).attr('id');
+    let datePicked = $(this).find('.datepicker').val();
+    let workedHour = $(this).find('.munkaora').val(); 
+    workedHour = parseFloat(workedHour.replace(',','.').replace(' ', ''));
+    let comment_text = $(this).find('.comment').val();
+    let okToSend = false;
+    new_munkanaps.push({
+      "id": munkanapId,
+      "datePicked": datePicked,
+      "workedHour": workedHour,
+      "comment": comment_text,
+      "okToSend": okToSend
+    });
+  }); //each
+  console.log("A munkanapok: "+JSON.stringify(new_munkanaps));
 }
 
 
@@ -100,6 +115,7 @@ $(document).on('blur', '.munkaora' , function() {
   } else {
     $(this).val('0');
   }
+
 });
 
 $(document).ready(function () {
