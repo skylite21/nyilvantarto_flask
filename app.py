@@ -10,7 +10,8 @@ app.debug = True
 # a / oldalon get és post method-okat is engedünk
 # https://www.w3schools.com/tags/ref_httpmethods.asp
 # EZ NEM EGY IGAZI BEJELENTKEZŐ FELÜLET, így nem szabad csinálni
-# rendes belejentkezést
+# rendes belejentkezés
+# # # # test33
 #
 validuser = "skylite"
 
