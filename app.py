@@ -13,6 +13,7 @@ app.debug = True
 # rendes belejentkezést
 ##### test branch
 ##### test branch2
+## merged?
 
 
 validuser = "skylite"
