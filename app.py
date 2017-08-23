@@ -44,6 +44,7 @@ def index():
     # login.html-t rendereljük:
     # started working on this return line in my brand new branch
     # this line sucks I need to work on it some more
+    # readytoMERGE
     return render_template('login.html', error=error)
 
 
