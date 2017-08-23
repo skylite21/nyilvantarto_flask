@@ -12,6 +12,7 @@ app.debug = True
 # EZ NEM EGY IGAZI BEJELENTKEZŐ FELÜLET, így nem szabad csinálni
 # rendes belejentkezéskylite
 #testing brenCS
+# working m:wqÉwq:ore
 #
 validuser = "skylite"
 
