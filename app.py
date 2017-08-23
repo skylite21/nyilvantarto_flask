@@ -43,6 +43,7 @@ def index():
     # ha nem POST a http kérés, hanem GET, akkor simán csak a
     # login.html-t rendereljük:
     # started working on this return line in my brand new branch
+    # this line sucks I need to work on it some more
     return render_template('login.html', error=error)
 
 
