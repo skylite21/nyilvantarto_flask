@@ -5,7 +5,7 @@ git beallitasa:
 ````
 apt install git
 ````
-# git alap beallitasa:
+# git alap beallitasa :
 ````
 git config --global user.email "sajat@email.hu"
 git config --global user.name "sajatUsernevem"
