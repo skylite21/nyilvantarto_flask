@@ -42,6 +42,7 @@ def index():
     # a flask minden template file-t a templates mappán belül keres.
     # ha nem POST a http kérés, hanem GET, akkor simán csak a
     # login.html-t rendereljük:
+    # started working on this return line in my brand new branch
     return render_template('login.html', error=error)
 
 
