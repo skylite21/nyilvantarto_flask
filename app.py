@@ -14,6 +14,10 @@ app.debug = True
 #
 validuser = "skylite"
 
+
+
+# THIS IS THE MASTER BRANCH
+
 @app.route("/", methods=['GET', 'POST'])
 def index():
     # egy error változót deklarálunk aminek a kezdő értéken None (azaz semmi)
