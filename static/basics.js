@@ -1,12 +1,12 @@
-// ez a file a javascript alapokat tartalmazza, nem az app része
-
+// ez a file a javascript alapokat tartalmazza
 
 'use strict'; // szigorú mód, szigorúbbak a szabályok, érdemes használni
 
-console.log("Hello bazmeg");
+console.log("Hello World");
 
 // globalis valtozo lesz a szoveg!!! a kódban MINDENHOL elérhető lesz a szoveg valtozo
-// szoveg = "ez itt a szoveg";
+// implicit globals should be avoided!
+szoveg = "ez itt a szoveg";
 // console.log("a szoveg valtozo tartalma: "+szoveg);
 
 // újra deklarálható szöveg lesz
@@ -17,7 +17,7 @@ console.log(szoveg2);
 // nem lesz ujra deklarálható
 let szoveg3 = "ez egy nem ujra deklaralhato szoveg, let kulcsszóval hoztuk létre";
 
-// ez nem mukodik mert mar deklaraltuk a szoveg3-at
+// ez nem mukodik mert mar deklaraltuk a szoveg3-at, hibát dobna:
 // let szoveg3 = "ez egy nem ujra deklaralhato szoveg, let kulcsszóval hoztuk létre";
 // uj erteket adok a szoveg3 valtozoban;
 szoveg3 = "vas;aldksldkgj";
