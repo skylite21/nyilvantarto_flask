@@ -1,6 +1,5 @@
 // ez a file a javascript alapokat tartalmazza
 
-
 'use strict'; // szigorú mód, szigorúbbak a szabályok, érdemes használni
 
 console.log("Hello World");
